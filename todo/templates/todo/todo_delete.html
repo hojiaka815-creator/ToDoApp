@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vazifani o‘chirish</title>
+</head>
+<body>
+    <h1>Haqiqatan ham o‘chirmoqchimisiz?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Ha, o‘chirish</button>
+        <a href="{% url 'todo_list' %}">Yo‘q, orqaga</a>
+    </form>
+</body>
+</html>
