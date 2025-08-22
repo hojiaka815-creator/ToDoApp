@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vazifa formasi</title>
+</head>
+<body>
+    <h1>Vazifa qo'shish/tahrirlash</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Saqlash</button>
+    </form>
+    <a href="{% url 'todo_list' %}">Orqaga</a>
+</body>
+</html>
