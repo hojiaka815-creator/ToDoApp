@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo List</title>
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <a href="{% url 'todo_create' %}">Yangi vazifa qo'shish</a>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <strong>{{ todo.title }}</strong>
+                {% if todo.completed %} (Bajarilgan) {% endif %}
+                <br>
+                {{ todo.description }}
+                <br>
+                <a href="{% url 'todo_update' todo.pk %}">Tahrirlash</a>
+                <a href="{% url 'todo_delete' todo.pk %}">O'chirish</a>
+            </li>
+        {% empty %}
+            <li>Hali vazifalar yo'q</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
