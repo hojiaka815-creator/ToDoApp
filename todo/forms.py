@@ -1,7 +1,7 @@
 from django import forms
-from .models import Todo
+from .models import ToDo
 
-class TodoForm(forms.ModelForm):
+class ToDoForm(forms.ModelForm):
     class Meta:
-        model = Todo
+        model = ToDo
         fields = ['title', 'description', 'completed']
